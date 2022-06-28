@@ -122,12 +122,17 @@ const validCheckbox = () => {
                 if (hobbiesArray.indexOf(inputElements[i].value) == -1) {
                     hobbiesArray.push(inputElements[i].value)
                 }
+            } else {
+                checkboxValid = false
+                if (hobbiesArray.indexOf(inputElements[i].value) > -1) {
+                    hobbiesArray.splice(hobbiesArray.indexOf(inputElements[i].value), 1)
+                }
+                if (hobbiesArray.length > 0) {
+                    checkboxValid = true
+                }
+
             }
         }
     }
-    if (checkboxValid) {
-        allValid()
-        return
-    }
-    checkboxValid = false
+    allValid()
 }
