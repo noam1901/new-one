@@ -14,9 +14,9 @@
     <form id="regForm">
         <h1>Image and Hobbies:</h1>
         <div class="tab" id="imgAndHobbies">
-            <p><input type="url" name="" id="avatarUrl">
+            <p><input class="input invalid" type="url" name="" id="avatarUrl" oninput="validImage(this)">
                 <img src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
-                    alt="preview" id="imgPreview">
+                    alt="preview" id="imgPreview" >
             </p>
             <p>Hobbies:</p>
         </div>
@@ -27,7 +27,7 @@
             <div style="float:right;">
 
                 <button type="button" id="prevBtn"><a href="./phase2.html">Previous</a></button>
-                <button type="button" id="nextBtn"><a href="./phase4.html">Next</a></button>
+                <button type="button" id="nextBtn" class="hidden"><a href="./phase4.html">Next</a></button>
             </div>
         </div>
         <!-- Circles which indicates the steps of the form: -->
