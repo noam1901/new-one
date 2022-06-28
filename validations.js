@@ -3,6 +3,7 @@ const citySpan = document.querySelector("#city_span")
 const imgPreview = document.querySelector('#imgPreview')
 const imgUrl = document.querySelector('#avatarUrl')
 
+
 const nextButton = document.querySelector("#nextBtn")
 const prevButton = document.querySelector("#prev")
 const inputs = document.querySelectorAll(".input")
@@ -13,6 +14,8 @@ const allValid = () => {
         if (input.classList.contains("invalid")) {
             valid = false
         }
+
+
     }
     if (valid) {
         nextButton.classList.remove("hidden")
@@ -95,19 +98,6 @@ const validImage = (e) => {
     }
     allValid()
 }
-const validCheckbox = () => {
-    let inputElements = document.querySelectorAll("#checkboxId");
-    for (let i = 0; i < inputElements.length; i++) {
-        if (inputElements[i].type == "checkbox") {
-            if (inputElements[i].checked) {
-                allValid()
-                return true;
-            }
-        }
-    }
-    allValid()
-    return false;
-}
 
 const agree = (e) => {
     if (e.checked) {
@@ -137,7 +127,19 @@ const getHobbies = async () => {
     createCheckBox(results)
 }
 
-
+let checkboxValid = false
+const validCheckbox = () => {
+    let inputElements = document.querySelectorAll("[name='hobbies']");
+    for (let i = 0; i < inputElements.length; i++) {
+        if (inputElements[i].type == "checkbox") {
+            if (inputElements[i].checked) {
+                checkboxValid = true
+                return
+            }
+        }
+    }
+    checkboxValid = false
+}
 const createCheckBox = (results) => {
     results.forEach(hobbie => {
         const formCheck = document.createElement('div')
@@ -146,7 +148,11 @@ const createCheckBox = (results) => {
         const checkInput = document.createElement('input')
         checkInput.setAttribute('class', 'form-check-input')
         checkInput.setAttribute('type', 'checkbox')
-        checkInput.setAttribute('id', 'flexCheckHobbie')
+        checkInput.setAttribute('name', 'hobbies')
+        checkInput.setAttribute('value', hobbie.hobbie_name)
+        checkInput.classList.add('input', "invalid")
+        checkInput.addEventListener("change", validCheckbox)
+
 
         const checkBoxLabel = document.createElement('label')
         checkBoxLabel.setAttribute('class', 'form-check-label')
