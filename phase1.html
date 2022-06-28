@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="styling.css">
+</head>
+
+<body>
+    <form id="regForm">
+        <h1>Let us know more about you:</h1>
+        <div class="tab">
+            <p><input id="fullname" input placeholder="Full name..." oninput="validName(this)" name="fname"></p>
+            <p><input id="email" input placeholder="E-mail..." oninput="validEmail(this)" name="email"></p>
+            <p><input id="bDay" input type="date" placeholder="E-mail..." oninput="validDate(this)" name="email"></p>
+        </div>
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn"><a href="./agreement.html">Previous</a></button>
+                <button type="button" id="nextBtn"><a href="./phase2.html">Next</a></button>
+            </div>
+        </div>
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step finish"></span>
+            <span class="step active"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+
+        </div>
+    </form>
+</body>
+
+<script src="validations.js"></script>
+
+</html>
