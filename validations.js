@@ -1,12 +1,29 @@
 const citySpan = document.querySelector("#city_span")
 const imgPreview = document.querySelector('#imgPreview')
 
+const nextButton = document.querySelector("#nextBtn")
+const prevButton = document.querySelector("#prev")
+const inputs = document.querySelectorAll(".input")
+
+const allValid =()=> {
+    let valid = true
+    for(let input of inputs){
+        if(input.classList.contains("invalid")){
+            valid = false
+        }
+    }
+    if(valid){
+        nextButton.classList.remove("hidden")
+    }
+}
+
 const validCity = (e) => {
     if (e.value === "") {
         citySpan.classList.remove("city")
     } else {
         citySpan.classList.add("city")
     }
+    allValid()
 }
 const validStreet = (e) => {
     const streetRegEx = /^[A-Za-z]+\s?[./]?[A-Za-z]*$/g
@@ -15,6 +32,7 @@ const validStreet = (e) => {
     } else {
         e.classList.remove("invalid")
     }
+    allValid()
 }
 const validNumber = (e) => {
     if (Number(e.value) <= 0 || (Math.floor(Number(e.value)) !== Number(e.value)) || Number(e.value) === Infinity) {
@@ -22,6 +40,7 @@ const validNumber = (e) => {
     } else {
         e.classList.remove("invalid")
     }
+    allValid()
 }
 
 const validName = (e) => {
@@ -31,6 +50,7 @@ const validName = (e) => {
     } else {
         e.classList.remove("invalid")
     }
+    allValid()
 }
 
 const validEmail = (e) => {
@@ -41,6 +61,7 @@ const validEmail = (e) => {
         e.classList.remove("invalid")
 
     }
+    allValid()
 }
 
 const validDate = (e) => {
@@ -53,6 +74,7 @@ const validDate = (e) => {
         } else {
             e.classList.remove("invalid")
         }
+        allValid()
     }
 }
 const validImage = (e) => {
@@ -67,9 +89,23 @@ const validImage = (e) => {
 }
 const validCheckbox = () => {
     let inputElements = document.querySelectorAll("#checkboxId");
-    for (let i = 0; i < inputElements.length; i++)
-        if (inputElements[i].type == "checkbox")
-            if (inputElements[i].checked)
+    for (let i = 0; i < inputElements.length; i++){
+        if (inputElements[i].type == "checkbox"){
+            if (inputElements[i].checked){
+                allValid()
                 return true;
+            }
+        }       
+    }
+    allValid()
     return false;
+}
+
+const agree = (e) => {
+    if(e.checked){
+        e.classList.remove("invalid")
+    }else{
+        e.classList.add("invalid")
+    }
+    allValid()
 }
