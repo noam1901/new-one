@@ -1,0 +1,16 @@
+.agree_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.form-group{
+    width: 60vh;
+}
+
+.agree_submit{
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
