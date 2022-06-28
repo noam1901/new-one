@@ -14,6 +14,8 @@ const allValid =()=> {
     }
     if(valid){
         nextButton.classList.remove("hidden")
+    }else{
+        nextButton.classList.add("hidden")
     }
 }
 
