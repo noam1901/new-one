@@ -4,12 +4,19 @@ const imgPreview = document.querySelector('#imgPreview')
 const imgUrl = document.querySelector('#avatarUrl')
 const inputs = document.querySelectorAll(".input")
 const nextButton = document.querySelector("#nextBtn")
+const hobbiesArray = []
+
 
 const allValid = () => {
     let valid = true
     for (let input of inputs) {
         if (input.classList.contains("invalid")) {
             valid = false
+        }
+        if (window.location.href.indexOf("phase3") > -1) {
+            if (checkboxValid === false) {
+                valid = false
+            }
         }
 
 
@@ -131,9 +138,15 @@ const validCheckbox = () => {
         if (inputElements[i].type == "checkbox") {
             if (inputElements[i].checked) {
                 checkboxValid = true
-                return
+                if (hobbiesArray.indexOf(inputElements[i].value) == -1) {
+                    hobbiesArray.push(inputElements[i].value)
+                }
             }
         }
+    }
+    if (checkboxValid) {
+        allValid()
+        return
     }
     checkboxValid = false
 }
@@ -163,3 +176,4 @@ const createCheckBox = (results) => {
 }
 
 getHobbies()
+
