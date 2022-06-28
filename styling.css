@@ -138,3 +138,8 @@ input {
 .icon {
     width: 0.7rem;
 }
+#agreeCheck {
+    width: 5%;
+    padding: 0;
+
+}
