@@ -7,6 +7,13 @@ const nextButton = document.querySelector("#nextBtn")
 const prevButton = document.querySelector("#prev")
 const inputs = document.querySelectorAll(".input")
 
+const saveData =(num)=>{
+    for(let input of inputs){
+        localStorage.setItem(`${input.id}`,`${input.value}`)
+    }
+    localStorage.setItem('lastPhase', num)
+}
+
 const allValid = () => {
     let valid = true
     for (let input of inputs) {
