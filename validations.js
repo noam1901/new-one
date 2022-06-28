@@ -35,6 +35,7 @@ const validCity = (e) => {
     } else {
         citySpan.classList.add("city")
         citySelect.classList.remove("invalid")
+        localStorage.setItem('city', e.value)
 
     }
     allValid()
@@ -45,6 +46,8 @@ const validStreet = (e) => {
         e.classList.add("invalid")
     } else {
         e.classList.remove("invalid")
+        localStorage.setItem('street', e.value)
+
     }
     allValid()
 }
@@ -53,6 +56,8 @@ const validNumber = (e) => {
         e.classList.add("invalid");
     } else {
         e.classList.remove("invalid")
+        localStorage.setItem('number', e.value)
+
     }
     allValid()
 }
@@ -63,6 +68,8 @@ const validName = (e) => {
         e.className += " invalid"
     } else {
         e.classList.remove("invalid")
+        localStorage.setItem('fullname', e.value)
+
     }
     allValid()
 }
@@ -73,6 +80,8 @@ const validEmail = (e) => {
         e.className += " invalid"
     } else {
         e.classList.remove("invalid")
+        localStorage.setItem('email', e.value)
+
 
     }
     allValid()
@@ -87,6 +96,8 @@ const validDate = (e) => {
             return
         } else {
             e.classList.remove("invalid")
+            localStorage.setItem('bDay', e.value)
+
         }
         allValid()
     }
@@ -99,6 +110,8 @@ const validImage = (e) => {
     } else {
         imgPreview.src = e.value
         imgUrl.classList.remove("invalid")
+        localStorage.setItem('avatarUrl', e.value)
+
     }
     allValid()
 }
