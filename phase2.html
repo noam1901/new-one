@@ -16,12 +16,17 @@
         <div class="tab">
             <p>
                 <select class="input invalid" name="cities" id="city" onchange="validCity(this)">
-                    <option value="">Choose City</option>
+                    <option value=""><img src="icons/city.png" alt="city" class="icons"></option>
                 </select><span id="city_span" class="city">*</span>
             </p>
-            <p><input class="input invalid" id="street" placeholder="Street..." name="street"
-                    oninput="validStreet(this)"></p>
-            <p><input class="input invalid" id="number" placeholder="Number..." name="number" type="number"
+            <p>
+                <label for="street"><img src="icons/street.png" alt="street" class="icons"></label>
+                <input class="input invalid" id="street" placeholder="Street..." name="street"
+                    oninput="validStreet(this)">
+            </p>
+            <p>
+                <label for="number"><img src="icons/streetNumber.png" alt="streetNumber" class="icons"></label>
+                <input class="input invalid" id="number" placeholder="Number..." name="number" type="number"
                     oninput="validNumber(this)">
             </p>
 
