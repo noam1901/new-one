@@ -15,15 +15,18 @@
         <h1>Address:</h1>
         <div class="tab">
             <p>
+                <img src="icons/city.png" class="icon"><span> City:</span>
                 <select class="input invalid" name="cities" id="city" onchange="validCity(this)">
                     <option value="">Select city</option>
                 </select><span id="city_span" class="city">*</span>
             </p>
             <p>
+                <img src="icons/street.png" class="icon"><span> Street:</span>
                 <input class="input invalid" id="street" placeholder="Street..." name="street"
                     oninput="validStreet(this)">
             </p>
             <p>
+                <img src="icons/streetNumber.png" class="icon"><span> Street number:</span>
                 <input class="input invalid" id="number" placeholder="Number..." name="number" type="number"
                     oninput="validNumber(this)">
             </p>
