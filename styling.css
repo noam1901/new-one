@@ -132,6 +132,9 @@ a:active {
 
 }
 
-.icons{
-    width: 3rem;
+input {
+    border: none;
+}
+.icon {
+    width: 0.7rem;
 }
