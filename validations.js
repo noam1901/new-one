@@ -122,6 +122,12 @@ const getCities = async () => {
         cityOption.innerText = city
         citySelect.append(cityOption)
     }
+    citySelect.value = localStorage.getItem('city') || ""
+    if (citySelect.value !== "") {
+        citySelect.classList.remove("invalid")
+        allValid()
+
+    }
 }
 getCities()
 

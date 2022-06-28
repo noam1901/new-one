@@ -10,18 +10,22 @@
     <link rel="stylesheet" href="styling.css">
 </head>
 
-<body>
+<body onload="reloadData(1)">
     <form id="regForm">
         <h1>Let us know more about you:</h1>
         <div class="tab">
-            <p><input class="input invalid" id="fullname" input placeholder="Full name..." oninput="validName(this)" name="fname"></p>
-            <p><input class="input invalid" id="email" input placeholder="E-mail..." oninput="validEmail(this)" name="email"></p>
-            <p><input class="input invalid" id="bDay" input type="date" placeholder="E-mail..." oninput="validDate(this)" name="email"></p>
+            <p><input class="input invalid" id="fullname" input placeholder="Full name..." oninput="validName(this)"
+                    name="fname"></p>
+            <p><input class="input invalid" id="email" input placeholder="E-mail..." oninput="validEmail(this)"
+                    name="email"></p>
+            <p><input class="input invalid" id="bDay" input type="date" placeholder="E-mail..."
+                    oninput="validDate(this)" name="email"></p>
         </div>
         <div style="overflow:auto;">
             <div style="float:right;">
                 <button type="button" id="prevBtn"><a href="./agreement.html">Previous</a></button>
-                <button type="button" id="nextBtn" class="hidden"><a href="./phase2.html" onclick="saveData(2)">Next</a></button>
+                <button type="button" id="nextBtn" class="hidden"><a href="./phase2.html"
+                        onclick="saveData(2)">Next</a></button>
             </div>
         </div>
         <!-- Circles which indicates the steps of the form: -->
@@ -38,4 +42,5 @@
 
 <script src="validations.js"></script>
 <script src="buttonsMovement.js"></script>
+
 </html>
