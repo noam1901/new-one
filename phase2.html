@@ -19,8 +19,8 @@
                     <option value="">Choose City</option>
                 </select><span id="city_span" class="city">*</span>
             </p>
-            <p><input id="street" placeholder="Street..." name="street" oninput="validateStreet(this)"></p>
-            <p><input id="number" placeholder="Number..." name="number" type="number" oninput="validateNumber(this)">
+            <p><input class="input invalid" id="street" placeholder="Street..." name="street" oninput="validateStreet(this)"></p>
+            <p><input class="input invalid" id="number" placeholder="Number..." name="number" type="number" oninput="validateNumber(this)">
             </p>
 
         </div>
@@ -28,7 +28,7 @@
         <div style="overflow:auto;">
             <div style="float:right;">
                 <button type="button" id="prevBtn"><a href="./phase1.html">Previous</a></button>
-                <button type="button" id="nextBtn"><a href="./phase3.html">Next</a></button>
+                <button type="button" id="nextBtn" class="hidden"><a href="./phase3.html">Next</a></button>
             </div>
         </div>
         <!-- Circles which indicates the steps of the form: -->

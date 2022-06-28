@@ -17,11 +17,11 @@
                 voluptas deserunt consequuntur! Assumenda, alias aliquid rerum laboriosam nostrum accusamus totam atque,
                 dolores, fugiat quis adipisci.</p>
             <p>Do you Agree?</p>
-            <p><input type="checkbox">Yes</p>
+            <p><input type="checkbox" class="invalid" oninput="agree(this)">Yes</p>
         </div>
         <div style="overflow:auto;">
             <div style="float:right;">
-                <button type="button" id="nextBtn"><a href="./phase1.html">Start</a></button>
+                <button type="button" id="nextBtn" class="hidden"><a id="link" href="./phase1.html" >Start</a></button>
             </div>
         </div>
         <!-- Circles which indicates the steps of the form: -->
@@ -37,5 +37,6 @@
 </body>
 
 <script src="validations.js"></script>
+<script src="buttonsMovement.js"></script>
 
 </html>
