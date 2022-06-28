@@ -132,6 +132,12 @@ a:active {
 
 }
 
-.icons{
+.icons {
     width: 3rem;
+}
+
+#agreeCheck {
+    width: 5%;
+    padding: 0;
+
 }
