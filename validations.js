@@ -2,18 +2,8 @@ const citySelect = document.querySelector("#city")
 const citySpan = document.querySelector("#city_span")
 const imgPreview = document.querySelector('#imgPreview')
 const imgUrl = document.querySelector('#avatarUrl')
-
-
-const nextButton = document.querySelector("#nextBtn")
-const prevButton = document.querySelector("#prev")
 const inputs = document.querySelectorAll(".input")
-
-const saveData =(num)=>{
-    for(let input of inputs){
-        localStorage.setItem(`${input.id}`,`${input.value}`)
-    }
-    localStorage.setItem('lastPhase', num)
-}
+const nextButton = document.querySelector("#nextBtn")
 
 const allValid = () => {
     let valid = true
