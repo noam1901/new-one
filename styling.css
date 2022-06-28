@@ -121,6 +121,13 @@ a:active {
     text-decoration: none;
     color: white;
 }
+
 .hidden {
     display: none;
+}
+
+
+#final_img {
+    width: 15rem;
+
 }

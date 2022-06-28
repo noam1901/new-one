@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styling.css">
 </head>
 
-<body>
+<body onload="reloadData(4)">
     <form id="regForm">
         <h1>Info:</h1>
         <div class="tab">
@@ -19,7 +19,8 @@
         </div>
         <div style="overflow:auto;">
             <div style="float:right;">
-                <button type="button" id="nextBtn"><a href="./agreement.html" onclick="localStorage.clear()">Create a new one</a></button>
+                <button type="button" id="nextBtn"><a href="./agreement.html" onclick="localStorage.clear()">Create a
+                        new one</a></button>
             </div>
         </div>
         <!-- Circles which indicates the steps of the form: -->
@@ -36,4 +37,6 @@
 
 <script src="validations.js"></script>
 <script src="buttonsMovement.js"></script>
+<script src="showInfo.js"></script>
+
 </html>
