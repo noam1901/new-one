@@ -1,4 +1,3 @@
-/* eslint-disable */
 const citySpan = document.querySelector("#city_span")
 const imgPreview = document.querySelector('#imgPreview')
 
@@ -65,4 +64,12 @@ const validImage = (e) => {
         imgPreview.src = e.value
         imgPreview.classList.remove("invalid")
     }
+}
+const validCheckbox = () => {
+    let inputElements = document.querySelectorAll("#checkboxId");
+    for (let i = 0; i < inputElements.length; i++)
+        if (inputElements[i].type == "checkbox")
+            if (inputElements[i].checked)
+                return true;
+    return false;
 }
