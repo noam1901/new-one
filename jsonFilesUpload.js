@@ -1,9 +1,23 @@
+const citySelect = document.querySelector("#city")
 
-const getHobbies = async() => {
+const getCities = async () => {
+  const response = await fetch("./cities.json")
+  const data = await response.json()
+  for (const city of data.cities) {
+    const cityOption = document.createElement("option")
+    cityOption.value = city
+    cityOption.setAttribute("id", city)
+    cityOption.innerText = city
+    citySelect.append(cityOption)
+  }
+}
+getCities()
+const getHobbies = async () => {
   const hobbies = await fetch('http://127.0.0.1:5500/hobbies.json')
   const results = await hobbies.json()
   createCheckBox(results)
 }
+
 
 const createCheckBox = (results) => {
   results.forEach(hobbie => {
@@ -23,7 +37,7 @@ const createCheckBox = (results) => {
     formCheck.append(checkInput, checkBoxLabel)
     document.querySelector('#imgAndHobbies').appendChild(formCheck)
   });
-  
+
 }
 
 getHobbies()

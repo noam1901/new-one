@@ -15,12 +15,14 @@
         <h1>Address:</h1>
         <div class="tab">
             <p>
-                <select name="cities" id="city" onchange="validCity(this)">
+                <select class="input invalid" name="cities" id="city" onchange="validCity(this)">
                     <option value="">Choose City</option>
                 </select><span id="city_span" class="city">*</span>
             </p>
-            <p><input class="input invalid" id="street" placeholder="Street..." name="street" oninput="validStreet(this)"></p>
-            <p><input class="input invalid" id="number" placeholder="Number..." name="number" type="number" oninput="validNumber(this)">
+            <p><input class="input invalid" id="street" placeholder="Street..." name="street"
+                    oninput="validStreet(this)"></p>
+            <p><input class="input invalid" id="number" placeholder="Number..." name="number" type="number"
+                    oninput="validNumber(this)">
             </p>
 
         </div>
