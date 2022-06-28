@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="styling.css">
+</head>
+
+<body>
+    <form id="regForm">
+        <div class="tab">Address:
+            <p>
+                <select name="cities" id="city" onchange="validateCity(this)">
+                    <option value="">Choose City</option>
+                </select><span id="city_span" class="city">*</span>
+            </p>
+            <p><input id="street" placeholder="Street..." name="street" oninput="validateStreet(this)"></p>
+            <p><input id="number" placeholder="Number..." name="number" type="number" oninput="validateNumber(this)">
+            </p>
+
+        </div>
+
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn"><a href="./phase3.html">Next</a></button>
+            </div>
+        </div>
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step finish"></span>
+            <span class="step active"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+</body>
+
+<script src="validations.js"></script>
+
+</html>
