@@ -5,42 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phase 1</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Wizard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css" integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q==" crossorigin="anonymous" />
     <link rel="stylesheet" href="styling.css">
 </head>
 
-<body onload="reloadData(1)">
-    <form id="regForm">
-        <h1>Let us know more about you:</h1>
-        <div class="tab">
-            <p><input class="input invalid" id="fullname" input placeholder="Full name..." oninput="validName(this)"
-                    name="fname"></p>
-            <p><input class="input invalid" id="email" input placeholder="E-mail..." oninput="validEmail(this)"
-                    name="email"></p>
-            <p><input class="input invalid" id="bDay" input type="date" placeholder="E-mail..."
-                    oninput="validDate(this)" name="email"></p>
+<body>
+    <div class="phase1_container">
+        <div class="input-group">
+            <span class="input-group-text">First and last name</span>
+            <img src="icons/fullName.png" alt="fullName" class="icons">
+            <input type="text" aria-label="First name" class="form-control">
+            <input type="text" aria-label="Last name" class="form-control">
         </div>
-        <div style="overflow:auto;">
-            <div style="float:right;">
-                <button type="button" id="prevBtn"><a href="./agreement.html">Previous</a></button>
-                <button type="button" id="nextBtn" class="hidden"><a href="./phase2.html"
-                        onclick="saveData(2)">Next</a></button>
-            </div>
-        </div>
-        <!-- Circles which indicates the steps of the form: -->
-        <div style="text-align:center;margin-top:40px;">
-            <span class="step finish"></span>
-            <span class="step active"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-
-        </div>
-    </form>
+    </div>
 </body>
 
-<script src="validations.js"></script>
-<script src="buttonsMovement.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js" integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw==" crossorigin="anonymous"></script>
 </html>
