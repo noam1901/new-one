@@ -32,6 +32,8 @@ const validCity = (e) => {
     if (e.value === "") {
         citySpan.classList.remove("city")
         citySelect.classList.add("invalid")
+        localStorage.setItem('city', "")
+
     } else {
         citySpan.classList.add("city")
         citySelect.classList.remove("invalid")
@@ -44,6 +46,8 @@ const validStreet = (e) => {
     const streetRegEx = /^[A-Za-z]+\s?[./]?[A-Za-z]*$/g
     if (!streetRegEx.test(e.value)) {
         e.classList.add("invalid")
+        localStorage.setItem('street', "")
+
     } else {
         e.classList.remove("invalid")
         localStorage.setItem('street', e.value)
@@ -54,6 +58,8 @@ const validStreet = (e) => {
 const validNumber = (e) => {
     if (Number(e.value) <= 0 || (Math.floor(Number(e.value)) !== Number(e.value)) || Number(e.value) === Infinity) {
         e.classList.add("invalid");
+        localStorage.setItem('number', "")
+
     } else {
         e.classList.remove("invalid")
         localStorage.setItem('number', e.value)
@@ -66,6 +72,8 @@ const validName = (e) => {
     const regexName = /^[A-z]{2,}( [A-z]{2,})+([A-z]|[ ]?)$/g
     if (!regexName.test(e.value)) {
         e.className += " invalid"
+        localStorage.setItem('fullname', "")
+
     } else {
         e.classList.remove("invalid")
         localStorage.setItem('fullname', e.value)
@@ -78,6 +86,8 @@ const validEmail = (e) => {
     const regexEmail = /^\S+@\S+\.\S+$/
     if (!regexEmail.test(e.value)) {
         e.className += " invalid"
+        localStorage.setItem('email', "")
+
     } else {
         e.classList.remove("invalid")
         localStorage.setItem('email', e.value)
@@ -93,6 +103,8 @@ const validDate = (e) => {
         const current = new Date()
         if (current.getFullYear() < date[0] || current.getFullYear() - date[0] < 18 || current.getFullYear() - date[0] == 18 && current.getMonth() < date[1] && current.getDay() < date[2]) {
             e.className += " invalid"
+            localStorage.setItem('bDay', "")
+
             return
         } else {
             e.classList.remove("invalid")
@@ -107,6 +119,8 @@ const validImage = (e) => {
     if (!regexImage.test(e.value)) {
         imgPreview.src = "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
         imgUrl.classList.add("invalid")
+        localStorage.setItem('avatarUrl', "")
+
     } else {
         imgPreview.src = e.value
         imgUrl.classList.remove("invalid")
