@@ -25,10 +25,26 @@
             <p><img src="icons/bdate.png" class="icon"><span> Birth of date:</span><input class="input invalid"
                     id="bDay" input type="date" placeholder="E-mail..." oninput="validDate(this)" name="email"></p>
             <p>Register As A Premium Wizard?</p>
-            <p id="pCheck"><label for=""><input type="checkbox" id="agreePremium" class="input invalid"
-                        onclick="premiumRegister()"><span>Yes</span></label></p>
+            <p id="pCheck"><label for=""><input type="checkbox" id="agreePremium" class="input"><span>Yes</span></label>
+            </p>
         </div>
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn"><a href="./agreement.html">Previous</a></button>
+                <button type="button" id="nextBtn" class="hidden"><a href="./phase2.html"
+                        onclick="saveData(2)">Next</a></button>
+            </div>
         </div>
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step finish"></span>
+            <span class="step active"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+
+        </div>
+    </form>
 </body>
 
 <script src="validations.js"></script>
