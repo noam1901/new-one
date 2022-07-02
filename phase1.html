@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wizard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css" integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q==" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css"
+        integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="styling.css">
 </head>
 
@@ -14,16 +17,18 @@
     <form id="regForm">
         <h1>Let us know more about you:</h1>
         <div class="tab">
-            <p class="icons"><img src="icons/fullName.png" class="icon"><span> Full name:</span><input class="input invalid fullname_icon" id="fullname" input placeholder="Full name..." oninput="validName(this)"name="fname"></p>
-            <p><img src="icons/email.png" class="icon"><span> Email:</span><input class="input invalid" id="email" input placeholder="E-mail..." oninput="validEmail(this)"
-                    name="email"></p>
-            <p><img src="icons/bdate.png" class="icon"><span> Birth of date:</span><input class="input invalid" id="bDay" input type="date" placeholder="E-mail..."
-                    oninput="validDate(this)" name="email"></p>
+            <p class="icons"><img src="icons/fullName.png" class="icon"><span> Full name:</span><input
+                    class="input invalid fullname_icon" id="fullname" input placeholder="Full name..."
+                    oninput="validName(this)" name="fname"></p>
+            <p><img src="icons/email.png" class="icon"><span> Email:</span><input class="input invalid" id="email" input
+                    placeholder="E-mail..." oninput="validEmail(this)" name="email"></p>
+            <p><img src="icons/bdate.png" class="icon"><span> Birth of date:</span><input class="input invalid"
+                    id="bDay" input type="date" placeholder="E-mail..." oninput="validDate(this)" name="email"></p>
             <p>Register As A Premium Wizard?</p>
             <p id="pCheck"><label for=""><input type="checkbox" id="agreePremium" class="input invalid"
-                onclick="premiumRegister()"><span>Yes</span></label></p>
+                        onclick="premiumRegister()"><span>Yes</span></label></p>
         </div>
-    </div>
+        </div>
 </body>
 
 <script src="validations.js"></script>
