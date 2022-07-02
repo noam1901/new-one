@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/halloween-spooky');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -8,6 +8,7 @@ input::-webkit-inner-spin-button {
 
 * {
     box-sizing: border-box;
+    font-family: 'League Gothic', sans-serif;
 }
 
 body {
@@ -17,14 +18,19 @@ body {
 #regForm {
     background: url("https://wallpapercave.com/wp/wp9477356.jpg");
     margin: 100px auto;
-    color: white;
     padding: 40px;
     width: 70%;
     min-width: 300px;
+    font-size: 2rem;
 }
 
 h1 {
     text-align: center;
+}
+
+select {
+    width: 10rem;
+    font-size: large;
 }
 
 input {
@@ -53,6 +59,7 @@ button {
     font-size: 17px;
     font-family: Raleway;
     cursor: pointer;
+    font-size: 1.5rem;
 }
 
 button:hover {
@@ -132,6 +139,20 @@ a:active {
 
 }
 
-.icons{
-    width: 3rem;
+input {
+    border: none;
+}
+
+.icon {
+    width: 0.7rem;
+}
+
+#agreeCheck {
+    width: 5%;
+    padding: 0;
+
+}
+
+li{
+    font-size: x-large;
 }

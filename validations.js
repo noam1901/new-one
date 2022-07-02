@@ -32,9 +32,12 @@ const validCity = (e) => {
     if (e.value === "") {
         citySpan.classList.remove("city")
         citySelect.classList.add("invalid")
+        localStorage.setItem('city', "")
+
     } else {
         citySpan.classList.add("city")
         citySelect.classList.remove("invalid")
+        localStorage.setItem('city', e.value)
 
     }
     allValid()
@@ -43,16 +46,24 @@ const validStreet = (e) => {
     const streetRegEx = /^[A-Za-z]+\s?[./]?[A-Za-z]*$/g
     if (!streetRegEx.test(e.value)) {
         e.classList.add("invalid")
+        localStorage.setItem('street', "")
+
     } else {
         e.classList.remove("invalid")
+        localStorage.setItem('street', e.value)
+
     }
     allValid()
 }
 const validNumber = (e) => {
     if (Number(e.value) <= 0 || (Math.floor(Number(e.value)) !== Number(e.value)) || Number(e.value) === Infinity) {
         e.classList.add("invalid");
+        localStorage.setItem('number', "")
+
     } else {
         e.classList.remove("invalid")
+        localStorage.setItem('number', e.value)
+
     }
     allValid()
 }
@@ -61,8 +72,12 @@ const validName = (e) => {
     const regexName = /^[A-z]{2,}( [A-z]{2,})+([A-z]|[ ]?)$/g
     if (!regexName.test(e.value)) {
         e.className += " invalid"
+        localStorage.setItem('fullname', "")
+
     } else {
         e.classList.remove("invalid")
+        localStorage.setItem('fullname', e.value)
+
     }
     allValid()
 }
@@ -71,8 +86,12 @@ const validEmail = (e) => {
     const regexEmail = /^\S+@\S+\.\S+$/
     if (!regexEmail.test(e.value)) {
         e.className += " invalid"
+        localStorage.setItem('email', "")
+
     } else {
         e.classList.remove("invalid")
+        localStorage.setItem('email', e.value)
+
 
     }
     allValid()
@@ -84,9 +103,13 @@ const validDate = (e) => {
         const current = new Date()
         if (current.getFullYear() < date[0] || current.getFullYear() - date[0] < 18 || current.getFullYear() - date[0] == 18 && current.getMonth() < date[1] && current.getDay() < date[2]) {
             e.className += " invalid"
+            localStorage.setItem('bDay', "")
+
             return
         } else {
             e.classList.remove("invalid")
+            localStorage.setItem('bDay', e.value)
+
         }
         allValid()
     }
@@ -96,9 +119,13 @@ const validImage = (e) => {
     if (!regexImage.test(e.value)) {
         imgPreview.src = "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
         imgUrl.classList.add("invalid")
+        localStorage.setItem('avatarUrl', "")
+
     } else {
         imgPreview.src = e.value
         imgUrl.classList.remove("invalid")
+        localStorage.setItem('avatarUrl', e.value)
+
     }
     allValid()
 }
@@ -112,31 +139,6 @@ const agree = (e) => {
     allValid()
 }
 
-const getCities = async () => {
-    const response = await fetch("./cities.json")
-    const data = await response.json()
-    for (const city of data.cities) {
-        const cityOption = document.createElement("option")
-        cityOption.value = city
-        cityOption.setAttribute("id", city)
-        cityOption.innerText = city
-        citySelect.append(cityOption)
-    }
-    citySelect.value = localStorage.getItem('city') || ""
-    if (citySelect.value !== "") {
-        citySelect.classList.remove("invalid")
-        allValid()
-
-    }
-}
-getCities()
-
-const getHobbies = async () => {
-    const hobbies = await fetch('./hobbies.json')
-    const results = await hobbies.json()
-    createCheckBox(results)
-}
-
 let checkboxValid = false
 const validCheckbox = () => {
     let inputElements = document.querySelectorAll("[name='hobbies']");
@@ -147,39 +149,17 @@ const validCheckbox = () => {
                 if (hobbiesArray.indexOf(inputElements[i].value) == -1) {
                     hobbiesArray.push(inputElements[i].value)
                 }
+            } else {
+                checkboxValid = false
+                if (hobbiesArray.indexOf(inputElements[i].value) > -1) {
+                    hobbiesArray.splice(hobbiesArray.indexOf(inputElements[i].value), 1)
+                }
+                if (hobbiesArray.length > 0) {
+                    checkboxValid = true
+                }
+
             }
         }
     }
-    if (checkboxValid) {
-        allValid()
-        return
-    }
-    checkboxValid = false
+    allValid()
 }
-const createCheckBox = (results) => {
-    results.forEach(hobbie => {
-        const formCheck = document.createElement('div')
-        formCheck.setAttribute('class', 'form-check')
-
-        const checkInput = document.createElement('input')
-        checkInput.setAttribute('class', 'form-check-input')
-        checkInput.setAttribute('type', 'checkbox')
-        checkInput.setAttribute('name', 'hobbies')
-        checkInput.setAttribute('value', hobbie.hobbie_name)
-        checkInput.classList.add('input', "invalid")
-        checkInput.addEventListener("change", validCheckbox)
-
-
-        const checkBoxLabel = document.createElement('label')
-        checkBoxLabel.setAttribute('class', 'form-check-label')
-        checkBoxLabel.setAttribute('for', 'flexCheckHobbie')
-        checkBoxLabel.innerText = hobbie.hobbie_name
-
-        formCheck.append(checkInput, checkBoxLabel)
-        document.querySelector('#imgAndHobbies').appendChild(formCheck)
-    });
-
-}
-
-getHobbies()
-
