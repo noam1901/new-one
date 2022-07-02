@@ -30,3 +30,10 @@ const reloadData = (currentPage) => {
 
 }
 
+const printSubChoice = () => {
+    const subChoice = document.querySelector('input[name="subChoice"]:checked').value
+    const totalCostSpan = document.querySelector('#totalCost') 
+    totalCostSpan.innerText = subChoice
+}
+
+printSubChoice()

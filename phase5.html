@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Register</title>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css" integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q==" crossorigin="anonymous" />
+</head>
+
+<body onload="reloadData()">
+    <div class="tab">
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center" style="color: white;">
+            <h1 class="display-4 fw-normal">Right Choice Wizard! Soon You'll Be Part Of The Mighty Club...</h1>
+            <p class="fs-2 text-light">Choose Your Plan:</p>
+        </div>
+
+        <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Trial</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$3.95<small class="text-muted fw-light">/14 Days</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Become A Premium Wizard</li>
+                    <li>Start Your Journey With 20 Bonus Mana</li>
+                    <li>+3 Magic Spells</li>
+                  </ul>
+                  <div class="form-check" style="display:inline-flex;">
+                    <input class="form-check-input" type="radio" name="subChoice" id="flexRadioDefault1" checked value="3.95" onclick="printSubChoice()">
+                    <label class="form-check-label fs-4" for="flexRadioDefault1">
+                        Try It Out
+                    </label>
+                  </div>
+                  
+                    
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Monthly</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$6.95<small class="text-muted fw-light">/Month</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Become A Premium Wizard</li>
+                    <li>Start Your Journey With 50 Bonus Mana</li>
+                    <li>+6 Magic Spells</li>
+                    <li>Become A Part Of The Wizard Order</li>
+                  </ul>
+                  
+                  <div class="form-check" style="display:inline-flex;">
+                    <input class="form-check-input" type="radio" name="subChoice" id="flexRadioDefault2" value="6.95" onclick="printSubChoice()">
+                    <label class="form-check-label fs-4" for="flexRadioDefault2">
+                        Get started
+                    </label>
+                  </div>
+                   
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-white bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Annual - pro</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$58.95<small class="text-muted fw-light">/Year</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Become A Grand Wizard</li>
+                    <li>Start Your Journey With 100 Bonus Mana And 3 Magik Items</li>
+                    <li>+8 Magic Spells</li>
+                    <li>Become A Part Of The Elite WIzard Order</li>
+                    <li>Get Access To All World Relms</li>
+                  </ul>
+                  <div class="form-check" style="display:inline-flex;">
+                    <input class="form-check-input" type="radio" name="subChoice" id="flexRadioDefault3" value="58.95" onclick="printSubChoice()">
+                    <label class="form-check-label fs-4" for="flexRadioDefault3">
+                        Become Pro Wizard NOW
+                    </label>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+    </div>
+    <div class="container-fluid text-center">
+        <span class="fs-2 text-light">Total Cost:</span>
+        <span class="fs-2 text-light" id="totalCost"></span>
+        <span class="fs-2 text-light">$</span>
+    </div>
+    <div style="overflow:auto;">
+        <div style="float:right;">
+            <button type="button" id="prevBtn"><a href="./phase1.html">Previous</a></button>
+            <button type="button" id="nextBtn" class=""><a href="./phase2.html"
+                    onclick="saveData()">Next</a></button>
+        </div>
+    </div>
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+        <span class="step finish"></span>
+        <span class="step active"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+    </div>
+</body>
+
+<script src="validations.js"></script>
+<script src="manageData.js"></script>
+
+</html>
